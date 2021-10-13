@@ -33,9 +33,8 @@ public class Passenger {
         idCounter = 0;
     }
 
-    public Passenger(String addressStreet, String addressCity,
-                           String addressState, String contactName, String contactPhone,
-                           String contactEmail) {
+    public Passenger(String contactName,String contactPhone,String contactEmail,String addressStreet,
+                     String addressCity,String addressState) {
         this.id = ++idCounter;
         this.address = new Address(addressStreet, addressCity, addressState);
         this.contact = new Contact(contactName, contactPhone, contactEmail);
