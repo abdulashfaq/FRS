@@ -36,10 +36,6 @@ public class Flight {
         return capacity - noOfSeatsBooked;
     }
 
-    /*public void updateSeats(Ticket ticket) {
-        if (ticket.getConfirmed() == true)
-            noOfSeatsBooked++;
-    }*/
 
     public String getFlightName() {
         return flightName;

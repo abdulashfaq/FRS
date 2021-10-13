@@ -5,9 +5,19 @@ public class regularTicket extends Ticket{
     private String water;
     private String  snacks;
 
-     public String[] getSpecialService(){
-         String[] services = {food,water,snacks};
-         return  services;
+
+
+    public regularTicket(long pnrNumber, String departureLoc, String destinationLoc,
+                         boolean confirmed, Flight flight, Passenger passenger, String food,
+                         String water, String snacks) {
+        super(pnrNumber, departureLoc, destinationLoc, confirmed, flight, passenger);
+        this.food = food;
+        this.water = water;
+        this.snacks = snacks;
+    }
+
+    public String[] getSpecialService(){
+         return new String[]{food,water,snacks};
      }
 
     public void updateSpecialService(String food,String water,String snacks){

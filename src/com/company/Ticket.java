@@ -13,6 +13,18 @@ public abstract class Ticket {
     Flight flight = new Flight();
     Passenger passenger;
 
+    public Ticket(long pnrNumber, String departureLoc, String destinationLoc,
+                  boolean confirmed, Flight flight, Passenger passenger) {
+        this.pnrNumber = pnrNumber;
+        this.departureLoc = departureLoc;
+        this.destinationLoc = destinationLoc;
+        this.confirmed = confirmed;
+        this.flight = flight;
+        this.passenger = passenger;
+        if(confirmed == true)
+            updateSeats();
+    }
+
     public boolean getTicketStatus(){
         return  confirmed;
     }
