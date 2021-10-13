@@ -14,17 +14,19 @@ public class regularTicket extends Ticket {
         this.water = water;
         this.snacks = snacks;
     }
-
+// returns the services ordered by the passneger
     public String getSpecialService() {
         return food + ", " + water + ", " + snacks;
     }
 
+    //updates the serivces for the passenger
     public void updateSpecialService(String food, String water, String snacks) {
         this.snacks = snacks;
         this.food = food;
         this.water = water;
     }
 
+    //getter's and setter's for the private attributes.
     public String getFood() {
         return food;
     }

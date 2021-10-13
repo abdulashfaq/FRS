@@ -32,16 +32,18 @@ public class Flight {
     public Flight() {
 
     }
-
+//   check the no of available Seats
     public int availableSeats() {
         return capacity - noOfSeatsBooked;
     }
 
+//    returns the flight details
     public String getFlightDetails() {
         return "Flight Name: " + flightName + ", Airline Name: " + airline + ", no of Seats: " +
                 capacity + ", available no of seats: " + availableSeats();
     }
 
+//    getters and setters of the private attributes.
 
     public String getFlightName() {
         return flightName;

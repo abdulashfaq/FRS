@@ -4,6 +4,7 @@ public class Passenger {
     private static int idCounter;
     private int id;
 
+//  Address class
     private static class Address {
         String street, city, state;
 
@@ -15,7 +16,7 @@ public class Passenger {
     }
 
     private Address address;
-
+//  contact Details class*
     private static class Contact {
 
 
@@ -46,10 +47,12 @@ public class Passenger {
         return this.id;
     }
 
+    //  returns the address Details of the passenger
     public String getAddressDetails() {
         return address.street + ", " + address.city + ", " + address.state;
     }
 
+//    returns the contact Details of the passenger.
     public String getContactDetails() {
         return contact.name + ", " + contact.phone + ", " + contact.email;
     }

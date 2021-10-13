@@ -35,6 +35,8 @@ public abstract class Ticket {
         return flight;
     }
 
+// calculate the duration of the journey
+
     public String durationOfJourney() throws ParseException {
         SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
         Date time1 = format.parse(flight.getTimeOfDeparture());
@@ -47,19 +49,23 @@ public abstract class Ticket {
         return "Duration of journey : " + diffHours + " hours " + diffMinutes + " minutes " + diffSeconds + " seconds";
     }
 
+//    update's the no of the seats booked attribute in the flight by 1.
     public void updateSeats() {
         if (confirmed == true)
             flight.setNoOfSeatsBooked(flight.getNoOfSeatsBooked() + 1);
     }
 
+    // cancel a ticket and decrease the no of seats booked attribute in the flight class
     public void cancelTicket() {
         confirmed = false;
-        flight.setNoOfSeatsBooked(flight.getNoOfSeatsBooked() - 1);//5
+        flight.setNoOfSeatsBooked(flight.getNoOfSeatsBooked() - 1);
     }
 
     public void confirmTicket() {
         confirmed = true;
     }
+
+    //getter's and setter's of the private attributes
 
     public long getPnrNumber() {
         return pnrNumber;
