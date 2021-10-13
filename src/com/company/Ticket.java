@@ -15,47 +15,51 @@ public abstract class Ticket {
     private int price;
 
     public Ticket(long pnrNumber, String departureLoc, String destinationLoc,
-                  boolean confirmed, Flight flight, Passenger passenger,int price) {
+                  boolean confirmed, Flight flight, Passenger passenger, int price) {
         this.pnrNumber = pnrNumber;
         this.departureLoc = departureLoc;
         this.destinationLoc = destinationLoc;
         this.confirmed = confirmed;
         this.flight = flight;
         this.passenger = passenger;
-        if(confirmed == true)
+        if (confirmed == true)
             updateSeats();
         this.price = price;
     }
 
-    public boolean getTicketStatus(){
-        return  confirmed;
+    public boolean getTicketStatus() {
+        return confirmed;
     }
-    public Flight getFlight(){
+
+    public Flight getFlight() {
         return flight;
     }
 
-   public String durationOfJourney() throws ParseException {
-       SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
-       Date time1 = format.parse(flight.getTimeOfDeparture());
-       Date time2 = format.parse(flight.getTimeOfArrival());
+    public String durationOfJourney() throws ParseException {
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+        Date time1 = format.parse(flight.getTimeOfDeparture());
+        Date time2 = format.parse(flight.getTimeOfArrival());
 
-       long duration = Math.abs(time1.getTime() - time2.getTime());
-       long diffSeconds = duration / 1000 % 60;
-       long diffMinutes = duration / (60 * 1000) % 60;
-       long diffHours = duration / (60 * 60 * 1000) % 24;
-       return  "Duration of journey : "+diffHours+" hours "+diffMinutes+" minutes "+diffSeconds+" seconds";
-  }
+        long duration = Math.abs(time1.getTime() - time2.getTime());
+        long diffSeconds = duration / 1000 % 60;
+        long diffMinutes = duration / (60 * 1000) % 60;
+        long diffHours = duration / (60 * 60 * 1000) % 24;
+        return "Duration of journey : " + diffHours + " hours " + diffMinutes + " minutes " + diffSeconds + " seconds";
+    }
+
     public void updateSeats() {
         if (confirmed == true)
-            flight.setNoOfSeatsBooked(flight.getNoOfSeatsBooked()+1);
+            flight.setNoOfSeatsBooked(flight.getNoOfSeatsBooked() + 1);
     }
-  public  void cancelTicket(){
+
+    public void cancelTicket() {
         confirmed = false;
-        flight.setNoOfSeatsBooked(flight.getNoOfSeatsBooked()-1);//5
-  }
-  public  void confirmTicket(){
+        flight.setNoOfSeatsBooked(flight.getNoOfSeatsBooked() - 1);//5
+    }
+
+    public void confirmTicket() {
         confirmed = true;
-  }
+    }
 
     public long getPnrNumber() {
         return pnrNumber;

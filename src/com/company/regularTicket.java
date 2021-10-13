@@ -1,29 +1,28 @@
 package com.company;
 
-public class regularTicket extends Ticket{
+public class regularTicket extends Ticket {
     private String food;
     private String water;
-    private String  snacks;
-
+    private String snacks;
 
 
     public regularTicket(long pnrNumber, String departureLoc, String destinationLoc,
                          boolean confirmed, Flight flight, Passenger passenger, String food,
-                         String water, String snacks,int price) {
-        super(pnrNumber, departureLoc, destinationLoc, confirmed, flight, passenger,price);
+                         String water, String snacks, int price) {
+        super(pnrNumber, departureLoc, destinationLoc, confirmed, flight, passenger, price);
         this.food = food;
         this.water = water;
         this.snacks = snacks;
     }
 
-    public String getSpecialService(){
-         return food+", "+water+", "+snacks;
-     }
+    public String getSpecialService() {
+        return food + ", " + water + ", " + snacks;
+    }
 
-    public void updateSpecialService(String food,String water,String snacks){
-         this.snacks = snacks;
-         this.food = food;
-         this.water = water;
+    public void updateSpecialService(String food, String water, String snacks) {
+        this.snacks = snacks;
+        this.food = food;
+        this.water = water;
     }
 
     public String getFood() {

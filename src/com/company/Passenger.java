@@ -13,6 +13,7 @@ public class Passenger {
             this.state = state;
         }
     }
+
     private Address address;
 
     private static class Contact {
@@ -27,14 +28,15 @@ public class Passenger {
         }
 
     }
+
     private Contact contact;
 
     static {
         idCounter = 0;
     }
 
-    public Passenger(String contactName,String contactPhone,String contactEmail,String addressStreet,
-                     String addressCity,String addressState) {
+    public Passenger(String contactName, String contactPhone, String contactEmail, String addressStreet,
+                     String addressCity, String addressState) {
         this.id = ++idCounter;
         this.address = new Address(addressStreet, addressCity, addressState);
         this.contact = new Contact(contactName, contactPhone, contactEmail);
@@ -43,11 +45,16 @@ public class Passenger {
     public int getId() {
         return this.id;
     }
+
     public String getAddressDetails() {
         return address.street + ", " + address.city + ", " + address.state;
     }
+
     public String getContactDetails() {
         return contact.name + ", " + contact.phone + ", " + contact.email;
     }
-    public  String getName(){ return contact.name; }
+
+    public String getName() {
+        return contact.name;
+    }
 }

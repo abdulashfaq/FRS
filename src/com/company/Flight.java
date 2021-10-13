@@ -36,9 +36,10 @@ public class Flight {
     public int availableSeats() {
         return capacity - noOfSeatsBooked;
     }
-    public String getFlightDetails(){
-        return "Flight Name: "+ flightName+", Airline Name: "+ airline+", no of Seats: "+
-                capacity+", available no of seats: " + availableSeats();
+
+    public String getFlightDetails() {
+        return "Flight Name: " + flightName + ", Airline Name: " + airline + ", no of Seats: " +
+                capacity + ", available no of seats: " + availableSeats();
     }
 
 
