@@ -49,7 +49,7 @@ public abstract class Ticket {
         return "Duration of journey : " + diffHours + " hours " + diffMinutes + " minutes " + diffSeconds + " seconds";
     }
 
-//    update's the no of the seats booked attribute in the flight by 1.
+    //    update's the no of the seats booked attribute in the flight by 1.
     public void updateSeats() {
         if (confirmed == true)
             flight.setNoOfSeatsBooked(flight.getNoOfSeatsBooked() + 1);

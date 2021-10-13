@@ -14,7 +14,8 @@ public class regularTicket extends Ticket {
         this.water = water;
         this.snacks = snacks;
     }
-// returns the services ordered by the passneger
+
+    // returns the services ordered by the passneger
     public String getSpecialService() {
         return food + ", " + water + ", " + snacks;
     }
