@@ -5,8 +5,8 @@ public class touristTicket extends Ticket {
     private String[] touristLocation = new String[5];
 
     public touristTicket(long pnrNumber, String departureLoc, String destinationLoc, boolean confirmed,
-                         Flight flight, Passenger passenger, String hotelLocation, String[] touristLocation) {
-        super(pnrNumber, departureLoc, destinationLoc, confirmed, flight, passenger);
+                         Flight flight, Passenger passenger, String hotelLocation, String[] touristLocation,int price) {
+        super(pnrNumber, departureLoc, destinationLoc, confirmed, flight, passenger,price);
         this.hotelLocation = hotelLocation;
         this.touristLocation = touristLocation;
     }

@@ -12,9 +12,10 @@ public abstract class Ticket {
     private boolean confirmed;
     Flight flight = new Flight();
     Passenger passenger;
+    private int price;
 
     public Ticket(long pnrNumber, String departureLoc, String destinationLoc,
-                  boolean confirmed, Flight flight, Passenger passenger) {
+                  boolean confirmed, Flight flight, Passenger passenger,int price) {
         this.pnrNumber = pnrNumber;
         this.departureLoc = departureLoc;
         this.destinationLoc = destinationLoc;
@@ -23,6 +24,7 @@ public abstract class Ticket {
         this.passenger = passenger;
         if(confirmed == true)
             updateSeats();
+        this.price = price;
     }
 
     public boolean getTicketStatus(){
@@ -32,13 +34,16 @@ public abstract class Ticket {
         return flight;
     }
 
-   public long durationOfJourney() throws ParseException {
+   public String durationOfJourney() throws ParseException {
        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
        Date time1 = format.parse(flight.getTimeOfDeparture());
        Date time2 = format.parse(flight.getTimeOfArrival());
 
-       long duration = time1.getTime() - time2.getTime();
-       return  duration;
+       long duration = Math.abs(time1.getTime() - time2.getTime());
+       long diffSeconds = duration / 1000 % 60;
+       long diffMinutes = duration / (60 * 1000) % 60;
+       long diffHours = duration / (60 * 60 * 1000) % 24;
+       return  diffHours+" : "+diffMinutes+" : "+diffSeconds;
   }
     public void updateSeats() {
         if (confirmed == true)

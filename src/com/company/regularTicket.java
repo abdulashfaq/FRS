@@ -9,8 +9,8 @@ public class regularTicket extends Ticket{
 
     public regularTicket(long pnrNumber, String departureLoc, String destinationLoc,
                          boolean confirmed, Flight flight, Passenger passenger, String food,
-                         String water, String snacks) {
-        super(pnrNumber, departureLoc, destinationLoc, confirmed, flight, passenger);
+                         String water, String snacks,int price) {
+        super(pnrNumber, departureLoc, destinationLoc, confirmed, flight, passenger,price);
         this.food = food;
         this.water = water;
         this.snacks = snacks;

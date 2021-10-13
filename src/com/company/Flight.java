@@ -18,9 +18,6 @@ public class Flight {
                 flight.timeOfDeparture, flight.timeOfArrival);
     }
 
-    public Flight() {
-    }
-
     public Flight(String flightName, String airline, int capacity, String dateOfDeparture, String dateOfArrival,
                   String timeOfDeparture, String timeOfArrival) {
         this.flightName = flightName;
@@ -32,8 +29,16 @@ public class Flight {
         this.timeOfArrival = timeOfArrival;
     }
 
+    public Flight() {
+
+    }
+
     public int availableSeats() {
         return capacity - noOfSeatsBooked;
+    }
+    public String getFlightDetails(){
+        return "Flight Name: "+ flightName+", Airline Name: "+ airline+", no of Seats: "+
+                capacity+", available no of seats: " + availableSeats();
     }
 
 
