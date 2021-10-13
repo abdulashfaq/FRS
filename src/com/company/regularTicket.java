@@ -16,8 +16,8 @@ public class regularTicket extends Ticket{
         this.snacks = snacks;
     }
 
-    public String[] getSpecialService(){
-         return new String[]{food,water,snacks};
+    public String getSpecialService(){
+         return food+", "+water+", "+snacks;
      }
 
     public void updateSpecialService(String food,String water,String snacks){

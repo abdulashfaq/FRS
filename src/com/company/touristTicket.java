@@ -12,14 +12,16 @@ public class touristTicket extends Ticket {
     }
 
 
-    public void addTouristLocation(String[] location) {
-          for(int i = 0;i<touristLocation.length;i++){
-              for(int j = 0;j< location.length;j++){
-                  if(touristLocation[i] != location[j]){
-                      touristLocation[i] = location[j];
-                  }
-              }
-          }
+    public String addTouristLocation(String[] location) {
+
+              touristLocation[0] = location[0];
+              touristLocation[1] = location[1];
+              touristLocation[2] = location[2];
+              touristLocation[3] = location[3];
+              touristLocation[4] = location[4];
+
+          return touristLocation[0]+", "+touristLocation[1]+", "+touristLocation[2]+", "+touristLocation[3]+", "+
+                  touristLocation[4];
     }
 
     public void removeTouristLocation(String[] location){

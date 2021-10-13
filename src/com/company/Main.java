@@ -25,5 +25,6 @@ public class Main {
         System.out.println(ticket1.durationOfJourney());
         System.out.println(ticket2.durationOfJourney());
         System.out.println(flight1.getFlightDetails());
+        System.out.println(ticket1.addTouristLocation(touristLocation));
     }
 }

@@ -30,7 +30,7 @@ public abstract class Ticket {
     public boolean getTicketStatus(){
         return  confirmed;
     }
-    public Flight getFlightDetails(){
+    public Flight getFlight(){
         return flight;
     }
 
@@ -43,7 +43,7 @@ public abstract class Ticket {
        long diffSeconds = duration / 1000 % 60;
        long diffMinutes = duration / (60 * 1000) % 60;
        long diffHours = duration / (60 * 60 * 1000) % 24;
-       return  diffHours+" : "+diffMinutes+" : "+diffSeconds;
+       return  "Duration of journey : "+diffHours+" hours "+diffMinutes+" minutes "+diffSeconds+" seconds";
   }
     public void updateSeats() {
         if (confirmed == true)
