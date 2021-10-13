@@ -20,8 +20,8 @@ public class Main {
         regularTicket ticket2 = new regularTicket(15486245645L,"Delhi","America",
                 true,flight2,passenger2,"Chicken Biriyani","Lime Water","Potato Chips",25000);
 
-        flight1.flightName;
-        flight1.getFlightName();
+
+        System.out.println(flight1.getFlightName());
         System.out.println(passenger1.getContactDetails());
         System.out.println(passenger2.getAddressDetails());
         System.out.println(ticket1.durationOfJourney());
