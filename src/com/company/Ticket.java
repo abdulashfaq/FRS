@@ -26,9 +26,11 @@ public abstract class Ticket {
             updateSeats();
         this.price = price;
     }
-    public String TicketDetails(){
-        return pnrNumber+", "+departureLoc+", "+destinationLoc;
+
+    public String TicketDetails() {
+        return pnrNumber + ", " + departureLoc + ", " + destinationLoc;
     }
+
     public boolean getTicketStatus() {
         return confirmed;
     }

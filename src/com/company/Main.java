@@ -1,7 +1,5 @@
 package com.company;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.text.ParseException;
 
 public class Main {
@@ -35,7 +33,7 @@ public class Main {
         printTicketDetails(ticket2);
     }
 
-    public static void printTicketDetails( Ticket ticket){
+    public static void printTicketDetails(Ticket ticket) {
         System.out.println(ticket.getPnrNumber());
     }
 }
