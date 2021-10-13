@@ -26,7 +26,9 @@ public abstract class Ticket {
             updateSeats();
         this.price = price;
     }
-
+    public String TicketDetails(){
+        return pnrNumber+", "+departureLoc+", "+destinationLoc;
+    }
     public boolean getTicketStatus() {
         return confirmed;
     }
@@ -42,7 +44,7 @@ public abstract class Ticket {
         Date time1 = format.parse(flight.getTimeOfDeparture());
         Date time2 = format.parse(flight.getTimeOfArrival());
 
-        long duration = Math.abs(time1.getTime() - time2.getTime());
+        long duration = Math.abs(time2.getTime() - time1.getTime());
         long diffSeconds = duration / 1000 % 60;
         long diffMinutes = duration / (60 * 1000) % 60;
         long diffHours = duration / (60 * 60 * 1000) % 24;
@@ -63,6 +65,7 @@ public abstract class Ticket {
 
     public void confirmTicket() {
         confirmed = true;
+        updateSeats();
     }
 
     //getter's and setter's of the private attributes

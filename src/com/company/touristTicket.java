@@ -13,24 +13,34 @@ public class touristTicket extends Ticket {
 
 // method overloading of  add location method
 
-    public void addLocation(String location1) {
-        touristLocation = new String[]{location1};
+    void addTouristLocation(String location1) {
+        touristLocation[0] = location1;
     }
 
-    public void addLocation(String location1, String location2) {
-        touristLocation = new String[]{location1, location2};
+    void addTouristLocation(String location1, String location2) {
+        touristLocation[0] = location1;
+        touristLocation[1] = location2;
     }
 
-    public void addLocation(String location1, String location2, String location3) {
-        touristLocation = new String[]{location1, location2, location3};
+    void addTouristLocation(String location1, String location2, String location3) {
+        touristLocation[0] = location1;
+        touristLocation[1] = location2;
+        touristLocation[2] = location3;
     }
 
-    public void addLocation(String location1, String location2, String location3, String location4) {
-        touristLocation = new String[]{location1, location2, location3, location4};
+    void addTouristLocation(String location1, String location2, String location3, String location4) {
+        touristLocation[0] = location1;
+        touristLocation[1] = location2;
+        touristLocation[2] = location3;
+        touristLocation[3] = location4;
     }
 
-    public void addLocation(String location1, String location2, String location3, String location4, String location5) {
-        touristLocation = new String[]{location1, location2, location3, location4, location5};
+    void addTouristLocation(String location1, String location2, String location3, String location4, String location5) {
+        touristLocation[0] = location1;
+        touristLocation[1] = location2;
+        touristLocation[2] = location3;
+        touristLocation[3] = location4;
+        touristLocation[4] = location5;
     }
 
     //    method overloading of remove location
