@@ -44,7 +44,7 @@ public abstract class Ticket {
     public String durationOfJourney() throws ParseException {
         String departureTimeDate = flight.getDateOfDeparture() + " " + flight.getTimeOfDeparture();
         String arrivalTimeDate = flight.getDateOfArrival() + " " + flight.getTimeOfArrival();
-        SimpleDateFormat format = new SimpleDateFormat("dd/mm/yy HH:mm:ss");
+        SimpleDateFormat format = new SimpleDateFormat("dd/mm/yyyy HH:mm:ss");
 
         Date time1 = format.parse(departureTimeDate);
         Date time2 = format.parse(arrivalTimeDate);
