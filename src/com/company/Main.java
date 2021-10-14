@@ -6,9 +6,9 @@ public class Main {
 
     public static void main(String[] args) throws ParseException {
         Flight flight1 = new Flight("Missile", "Air India", 250, "15/10/2021",
-                "17/10/2021", "15:30:00", "09:00:00");
+                "18/10/2021", "15:30:00", "09:00:00");
         Flight flight2 = new Flight("Bejing", "Air India", 200, "14/10/2021",
-                "15/10/2021", "09:00:00", "20:00:00");
+                "14/10/2021", "09:00:00", "23:00:00");
         Passenger passenger1 = new Passenger("Ashfaq", "+91 1023456789", "xyz@gmail.com",
                 "Chandrayan Gutta", "Hyderabad", "Telangana");
         Passenger passenger2 = new Passenger("Zubair", "+91 1234567890", "pqr@gmail.com",
