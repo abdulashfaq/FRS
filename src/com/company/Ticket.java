@@ -2,7 +2,7 @@ package com.company;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.*;
 
 public abstract class Ticket {
 
@@ -42,15 +42,21 @@ public abstract class Ticket {
 // calculate the duration of the journey
 
     public String durationOfJourney() throws ParseException {
-        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
-        Date time1 = format.parse(flight.getTimeOfDeparture());
-        Date time2 = format.parse(flight.getTimeOfArrival());
+        String departureTimeDate = flight.getDateOfDeparture()+" "+ flight.getTimeOfDeparture();
+        String arrivalTimeDate = flight.getDateOfArrival()+" "+ flight.getTimeOfArrival();
+        SimpleDateFormat format = new SimpleDateFormat("dd/mm/yy HH:mm:ss");
+
+        Date time1 = format.parse(departureTimeDate);
+        Date time2 = format.parse(arrivalTimeDate);
 
         long duration = Math.abs(time2.getTime() - time1.getTime());
         long diffSeconds = duration / 1000 % 60;
         long diffMinutes = duration / (60 * 1000) % 60;
         long diffHours = duration / (60 * 60 * 1000) % 24;
-        return "Duration of journey : " + diffHours + " hours " + diffMinutes + " minutes " + diffSeconds + " seconds";
+      //  long diffYears = (duration / (1000l * 60 * 60 * 24 * 365));
+        long diffDays = (duration / (1000 * 60 * 60 * 24)) % 365;
+
+        return "Duration of journey : "+diffDays+" days " + diffHours + " hours " + diffMinutes + " minutes " + diffSeconds + " seconds";
     }
 
     //    update's the no of the seats booked attribute in the flight by 1.
